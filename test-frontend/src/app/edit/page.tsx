@@ -14,7 +14,6 @@ interface EditProps {
 }
 
 const Edit: React.FC<EditProps> = ({ searchParams }) => {
-  console.log(searchParams.nameValue)
   return (
     <section className="px-6 py-6 md:px-24 md:py-24">
       <Title />
