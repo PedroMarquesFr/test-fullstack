@@ -1,4 +1,55 @@
+
 # Teste Fullstack: Aplicativo de Gerenciamento de Clientes
+
+## Instruções de Execução
+
+## Requisitos
+- Node.js (>= versão utilizada no projeto)
+- npm (gerenciador de pacotes)
+
+### 1. Configuração do Backend
+
+1. Acesse a pasta do backend:
+   ```bash
+   cd test-backend
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm i
+   ```
+
+3. Execute as migrações do banco de dados:
+   ```bash
+   npm run migration
+   ```
+
+4. Inicie o servidor em modo de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+### 2. Configuração do Frontend
+
+1. Acesse a pasta do frontend:
+   ```bash
+   cd ../test-frontend
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm i
+   ```
+
+3. Inicie o frontend em modo de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+### Observação
+Certifique-se de que o frontend está rodando na porta `3000`, pois, caso contrário, o sistema poderá enfrentar problemas de CORS ao se comunicar com o backend.
+
+Espero que gostem 🧡
 
 ## Descrição:
 

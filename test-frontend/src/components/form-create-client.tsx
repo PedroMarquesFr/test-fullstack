@@ -15,8 +15,8 @@ import Button from "./ui/button";
 import { useMask } from "@react-input/mask";
 import { toast } from "react-toastify";
 import { createClientService } from "@/services/client.service";
-import { redirect } from "next/navigation";
 import { statusOptions } from "@/types/valueObjects";
+import { useRouter } from "next/navigation"; 
 
 interface FormValues {
   nome: string;
@@ -27,6 +27,7 @@ interface FormValues {
 }
 
 const FormCreateClient: React.FC = () => {
+  const router = useRouter();
   const inputRefCPF = useMask({
     mask: "___.___.___-__",
     replacement: { _: /\d/ },
@@ -63,7 +64,7 @@ const FormCreateClient: React.FC = () => {
       toast.success("Usuário criado com sucesso", {
         position: "bottom-right",
       });
-      redirect("/");
+      router.push("/");
     } catch (error) {
       console.log(error);
       // @ts-ignore

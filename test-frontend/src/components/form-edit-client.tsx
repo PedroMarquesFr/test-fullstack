@@ -15,8 +15,8 @@ import Button from "./ui/button";
 import { useMask } from "@react-input/mask";
 import { toast } from "react-toastify";
 import { updateClientService } from "@/services/client.service";
-import { redirect } from "next/navigation";
 import { statusOptions } from "@/types/valueObjects";
+import { useRouter } from "next/navigation"; 
 
 interface FormValues {
   nome: string;
@@ -26,7 +26,7 @@ interface FormValues {
   status: string;
 }
 interface FormEditClientProps {
-    nameValue: string;
+  nameValue: string;
   email: string;
   document: string;
   phone: string;
@@ -35,6 +35,7 @@ interface FormEditClientProps {
 }
 
 const FormEditClient: React.FC<FormEditClientProps> = (props) => {
+  const router = useRouter();
   const inputRefCPF = useMask({
     mask: "___.___.___-__",
     replacement: { _: /\d/ },
@@ -72,7 +73,7 @@ const FormEditClient: React.FC<FormEditClientProps> = (props) => {
       toast.success("Usuário atualizado com sucesso", {
         position: "bottom-right",
       });
-      redirect("/");
+      router.push("/");
     } catch (error) {
       console.log(error);
       // @ts-ignore
@@ -191,7 +192,7 @@ const FormEditClient: React.FC<FormEditClientProps> = (props) => {
                 <FormControl>
                   <select
                     className={
-                      "w-64  h-10 border border-zinc-3 00 rounded p-2 my-2"
+                      "w-64 h-10 border border-zinc-3 00 rounded p-2 my-2"
                     }
                     {...field}
                   >
