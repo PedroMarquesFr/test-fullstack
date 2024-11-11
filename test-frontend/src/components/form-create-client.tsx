@@ -5,11 +5,9 @@ import { useForm, FormProvider, SubmitHandler } from "react-hook-form";
 import {
   FormField,
   FormItem,
-  FormLabel,
   FormControl,
   FormMessage,
 } from "./ui/form";
-import { cn } from "@/lib/utils";
 import LinkStyled from "./ui/link";
 import Button from "./ui/button";
 import { useMask } from "@react-input/mask";
@@ -67,7 +65,7 @@ const FormCreateClient: React.FC = () => {
       router.push("/");
     } catch (error) {
       console.log(error);
-      // @ts-ignore
+      // @ts-expect-error no need to type
       toast.error(error?.response?.data?.message, {
         position: "bottom-right",
       });

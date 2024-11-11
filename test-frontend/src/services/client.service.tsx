@@ -1,6 +1,19 @@
-import { AxiosResponse } from "axios";
 import { api } from "./api";
+enum Roles {
+  disabled = 1,
+  active = 2,
+  inactive = 3,
+  waiting = 4,
+}
 
+type Client = {
+  id: number;
+  displayName: string;
+  email: string;
+  document: string;
+  phone: string;
+  roleId: Roles;
+};
 interface ResponseAuth {
   access_token: string;
 }

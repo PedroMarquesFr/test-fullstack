@@ -1,6 +1,4 @@
 import React from "react";
-import { User } from "lucide-react";
-import Button from "./ui/button";
 import ClientsPanelWrapper from "./panel-clients-panel-wrapper";
 import LinkStyled from "./ui/link";
 import Title from "./ui/title";
@@ -32,7 +30,8 @@ const PanelClients: React.FC = async () => {
       </section>
     );
   } catch (error) {
-    <p>Verifique se a api esta funcionando corretamente</p>;
+    console.error(error)
+    return <p>Verifique se a api esta funcionando corretamente</p>;
   }
 };
 

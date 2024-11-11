@@ -5,16 +5,14 @@ import { useForm, FormProvider, SubmitHandler } from "react-hook-form";
 import {
   FormField,
   FormItem,
-  FormLabel,
   FormControl,
   FormMessage,
 } from "./ui/form";
-import { cn } from "@/lib/utils";
 import LinkStyled from "./ui/link";
 import Button from "./ui/button";
 import { useMask } from "@react-input/mask";
 import { toast } from "react-toastify";
-import { updateClientService } from "@/services/client.service";
+import { updateClientService } from "@/services/client.service";  
 import { statusOptions } from "@/types/valueObjects";
 import { useRouter } from "next/navigation"; 
 
@@ -76,7 +74,7 @@ const FormEditClient: React.FC<FormEditClientProps> = (props) => {
       router.push("/");
     } catch (error) {
       console.log(error);
-      // @ts-ignore
+      // @ts-expect-error no need to type
       toast.error(error?.response?.data?.message, {
         position: "bottom-right",
       });
